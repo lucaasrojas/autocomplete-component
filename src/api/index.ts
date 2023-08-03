@@ -132,4 +132,10 @@ export const top100Films: Film[] = [
 ];
 
 export const asyncFilter = async (query: string) =>
-	top100Films.filter((el: Film) => el.label.toLowerCase().includes(query.toLowerCase()))
+	new Promise<Film[]>(
+		(resolve, reject) => {
+			setTimeout(() => {
+
+				resolve((top100Films.filter((el: Film) => el.label.toLowerCase().includes(query.toLowerCase())) as Film[]))
+			},2000) // To test the loading
+		})
