@@ -5,9 +5,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 
 const Autocomplete = () => {
 	const [filteredList, setFilteredList] = React.useState<Film[]>(top100Films);
-	const [inputValue, setInputValue] = React.useState<string | undefined>(
-		undefined
-	);
+	const [inputValue, setInputValue] = React.useState<string | undefined>("");
 	const [selectedValue, setSelectedValue] = React.useState<string | undefined>()
 	const [showOptionList, setShowOptionList] = React.useState<boolean>(false)
 	const [loading, setLoading] = React.useState(false)
