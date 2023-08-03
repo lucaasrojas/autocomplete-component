@@ -132,6 +132,4 @@ export const top100Films: Film[] = [
 ];
 
 export const asyncFilter = async (query: string) =>
-	Promise.all(top100Films.map((el: Film) => el.label.includes(query))).then(
-		(results) => top100Films.filter((value, i) => results[i])
-	);
+	top100Films.filter((el: Film) => el.label.toLowerCase().includes(query.toLowerCase()))
